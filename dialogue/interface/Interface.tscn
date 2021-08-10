@@ -29,10 +29,10 @@ margin_bottom = 152.0
 text = "Dialogue Text"
 
 [node name="Button" type="Button" parent="."]
-margin_left = 1104.0
-margin_top = 32.0
-margin_right = 1264.0
-margin_bottom = 151.0
+margin_left = 937.0
+margin_top = 20.0
+margin_right = 1177.0
+margin_bottom = 139.0
 text = "Next"
 
 [connection signal="button_up" from="Button" to="." method="_on_Button_button_up"]

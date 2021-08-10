@@ -1,8 +1,10 @@
 extends Node
 
+
 export(int) var damage = 1
 export(int) var defense = 1
 var active = false setget set_active
+var rng = RandomNumberGenerator.new()
 
 signal turn_finished
 
@@ -33,7 +35,12 @@ func defend():
 
 
 func flee():
-	emit_signal("turn_finished")
+	var rnd = rng.randf_range(-10.0, 10.0)
+	if rnd > 0:
+		print("we would have successfully run away!")
+		#emit_signal("turn_finished")
+	else:
+		print("tried to run but failed!")
 
 
 func take_damage(damage_to_take):

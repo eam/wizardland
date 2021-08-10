@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://screens/combat/Combat.gd" type="Script" id=1]
 [ext_resource path="res://turn_combat/turn_queue/TurnQueue.tscn" type="PackedScene" id=2]
 [ext_resource path="res://theme/theme.tres" type="Theme" id=3]
 [ext_resource path="res://screens/combat/interface/UI.gd" type="Script" id=4]
 [ext_resource path="res://screens/combat/interface/Info.tscn" type="PackedScene" id=5]
+[ext_resource path="res://imports/music/Battle_Theme.mp3" type="AudioStream" id=6]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -40,6 +41,9 @@ margin_top = 77.0
 margin_right = 1280.0
 margin_bottom = 328.0
 custom_constants/separation = 360
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Buttons" type="PanelContainer" parent="UI"]
 margin_left = 80.0
@@ -78,6 +82,10 @@ margin_bottom = 242.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Flee"
+
+[node name="CombatMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
 
 [connection signal="button_up" from="UI/Buttons/GridContainer/Attack" to="UI" method="_on_Attack_button_up"]
 [connection signal="button_up" from="UI/Buttons/GridContainer/Defend" to="UI" method="_on_Defend_button_up"]

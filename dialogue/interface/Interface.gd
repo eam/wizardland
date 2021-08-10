@@ -7,6 +7,7 @@ func _ready():
 
 
 func show_dialogue(player, dialogue):
+	print("interface.gd func show_dialogue")
 	show()
 	$Button.grab_focus()
 	dialogue_node = dialogue

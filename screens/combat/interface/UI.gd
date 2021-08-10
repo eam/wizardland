@@ -8,6 +8,7 @@ func _ready():
 
 
 func initialize():
+	print("ui.gd func initialize")
 	for combatant in combatants_node.get_children():
 		var health = combatant.get_node("Health")
 		var info = info_scene.instance()

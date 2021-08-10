@@ -1,0 +1,26 @@
+
+
+player:
+
+ * weapon [left hand, right hand]
+ * armor [head, body, feet, shield]
+ * level up progression
+
+opponent:
+
+ * Different types!
+ * monster attributes
+
+
+Class Monster
+  Hitpoints - roll(dice, number) + ??  5d6 (roll a 6 sided dice 5 times, or 5 - 30 hp)
+  armor
+  spells
+  run_difficulty 0-100 (run_difficulty = 50)
+  monster_sprite
+  special_attack!
+end
+
+
+
+

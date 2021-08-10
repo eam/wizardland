@@ -1,3 +1,4 @@
 {
-  "dialog_1" : {"name":"Player", "text":"You see the famous peter pan!" }
+  "dialog_1" : {"name":"Player", "text":"You see the famous peter pan!" },
+  "dialog_2" : {"name":"Player", "text":"this is the second line" }
 }

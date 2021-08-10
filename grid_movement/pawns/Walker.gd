@@ -26,12 +26,31 @@ func _process(_delta):
 
 func get_input_direction():
 	return Vector2(
-		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
-		Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+		(Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")),
+		(Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up"))
 	)
 
 
 func update_look_direction(direction):
+	print("hello world\n")
+	print(direction)
+	print($AnimatedSprite2.animation)
+	print(direction.x)
+	print($ExplorationMusic)
+	if direction.x < 0:
+		print("going left")
+		$AnimatedSprite2.animation = "left"
+	if direction.x > 0:
+		print("going right")
+		$AnimatedSprite2.animation = "right"
+	if direction.y > 0:
+		print("going down")
+		$AnimatedSprite2.animation = "down"
+		#$Exploration/ExplorationMusic.play()
+	if direction.y < 0:
+		print("going up")
+		$AnimatedSprite2.animation = "up"
+		#$Exploration/ExplorationMusic.stop()
 	$Pivot/Sprite.rotation = direction.angle()
 
 

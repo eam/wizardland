@@ -7,6 +7,7 @@ const PLAYER_WIN = "res://dialogue/dialogue_data/player_won.json"
 const PLAYER_LOSE = "res://dialogue/dialogue_data/player_lose.json"
 
 func _ready():
+	print("zzzzzz")
 	exploration_screen = get_node(exploration_screen)
 	combat_screen = get_node(combat_screen)
 	combat_screen.connect("combat_finished", self, "_on_combat_finished")
@@ -21,6 +22,8 @@ func _ready():
 
 
 func start_combat(combat_actors):
+	print("game.gd func start_combat" )
+	print(get_stack())
 	remove_child($Exploration)
 	$AnimationPlayer.play("fade")
 	yield($AnimationPlayer, "animation_finished")
@@ -31,6 +34,7 @@ func start_combat(combat_actors):
 
 
 func _on_opponent_dialogue_finished(opponent):
+	print("game.gd func _on_opponent_dialogue_finished")
 	if opponent.lost:
 		return
 	var player = $Exploration/Grid/Player
@@ -49,7 +53,7 @@ func _on_combat_finished(winner, _loser):
 		dialogue.dialogue_file = PLAYER_LOSE
 	yield($AnimationPlayer, "animation_finished")
 	var player = $Exploration/Grid/Player
-	exploration_screen.get_node("DialogueUI").show_dialogue(player, dialogue)
+	exploration_screen.get_node("Exploration/Grid/Player/Camera2D2/DialogueUI").show_dialogue(player, dialogue)
 	combat_screen.clear_combat()
 	yield(dialogue, "dialogue_finished")
 	dialogue.queue_free()

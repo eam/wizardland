@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Techno_de_Chocobo.mp3-5acc271eb85e5d0414d45e11678714f3.mp3str"
+
+[deps]
+
+source_file="res://imports/music/Techno_de_Chocobo.mp3"
+dest_files=[ "res://.import/Techno_de_Chocobo.mp3-5acc271eb85e5d0414d45e11678714f3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
